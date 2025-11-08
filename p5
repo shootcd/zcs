@@ -1,0 +1,5 @@
+sudo setoolkit                                          # (recommended; PDF shows SET usage)
+
+############# from the directory where SET drops the page (SET handles this, but example):
+sudo python3 -m http.server 80                         # (recommended example if manual hosting needed)
+
