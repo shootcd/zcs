@@ -1,0 +1,40 @@
+########On Kali, confirm network interface & IP:
+
+ifconfig                                                # (from PDF) — or `ip a` (recommended modern)
+
+
+#####33On target Windows XP / Metasploitable check IP (inside target VM):
+
+ipconfig                                                # (from PDF)
+# or on Linux target: ifconfig
+
+
+########3Quick discovery (on Kali) to find live hosts:
+
+netdiscover -r 192.168.1.0/24                            # (recommended) adjust subnet
+# OR
+netdiscover                                              # (from PDF reference)
+
+
+#####33Nmap host & port scan (verbatim normalized from PDF):
+
+nmap -T4 -sS <target-ip>                                 # (from PDF, normalized)
+# example: nmap -T4 -sS 192.168.1.105
+
+
+##########Save scan output to file (explicit save example — useful):
+
+nmap -T4 -sS -oN metasploitable.nmap <target-ip>         # (recommended)
+cat metasploitable.nmap                                  # view saved results (from PDF)
+
+
+##Use Legion (GUI) — open from Start menu in Kali:
+
+####3GUI step: Menu → Legion → enter root password → specify IP subnet and bits → submit. (PDF shows GUI; no single command). 
+
+
+############DNS enumeration (examples from PDF):
+
+nslookup <domain>                                       # find IP, mail servers etc. (from PDF)
+dig <domain> MX                                         # recommended for mail servers (from PDF)
+dig <domain> NS                                         # recommended for name serve
