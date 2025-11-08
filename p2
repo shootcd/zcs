@@ -1,0 +1,52 @@
+Update package lists (always first):
+
+----sudo apt update                                         # (recommended)
+
+
+####Install pip3 (verbatim shown in PDF):
+
+sudo apt install python3-pip                            # (from PDF)
+
+
+#####Install OSRFramework (verbatim shown in PDF):
+
+sudo pip3 install osrframework                          # (from PDF)
+
+
+#######Clone Sublist3r (verbatim shown in PDF):
+
+git clone https://github.com/aboul3la/sublist3r.git     # (from PDF)
+cd sublist3r                                           # go into repo to run it
+# run later with: python3 sublist3r.py -d target.com    # example usage (recommended)
+
+
+###Run usufy and mailfy (verbatim shown in PDF):
+
+sudo usufy -n cyberhia                                  # (from PDF) -- example
+sudo mailfy -n cyberhia                                 # (from PDF) -- example
+
+
+######3Use the common Google dorks (text to paste into Google; from PDF):
+
+inurl:/wp-content/uploads/ ext.txt "username" AND "password" | "pwd" | "pw"
+inurl:/proc/self/cwd
+intitle:"index of" inurl:ftp
+filetype:xls inurl:"email.xls"
+
+
+(enter each dork in Google search box; these are provided in the PDF). 
+
+
+
+#####Check breach sites (open in browser; links from PDF):
+
+https://haveibeenpwned.com
+https://haveibeenzuckered.com/
+
+
+(visit in browser). 
+
+
+#####3Wordlists location (reference):
+
+/usr/share/wordlists                                   # (from PDF)
